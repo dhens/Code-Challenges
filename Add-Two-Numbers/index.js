@@ -1,0 +1,2 @@
+/* ended up not doing the activity because linked lists arent
+usually used in js */
