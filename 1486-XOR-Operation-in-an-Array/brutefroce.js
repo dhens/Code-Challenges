@@ -1,7 +1,7 @@
 // Given an integer n and an integer start.
 // Define an array nums where nums[i] = start + 2*i (0-indexed) and n == nums.length.
 // Return the bitwise XOR of all elements of nums.
- 
+
 // Example 1:
 
 // Input: n = 5, start = 0
@@ -30,6 +30,23 @@
  * @param {number} start
  * @return {number}
  */
-var xorOperation = function(n, start) {
-    
+var xorOperation = function (n, start) {
+    // Declare our array that will hold our calculated values
+    const valueArray = [];
+
+    // Starting at int 'start', we push 'start' as the first item into valueArray
+    // each following loop will calculate { start + 2 * i } and push its corresponding
+    // value into valueArray 
+    for (let i = 0; i < n; i++) {
+        if (valueArray.length === 0) {
+            valueArray.push(start);
+        }
+        else {
+            valueArray.push(start + 2 * i);
+        }
+    }
+    // Run the bitwise XOR operation on each index in valueArray
+    return valueArray.reduce((a, b) => a ^ b)
 };
+
+xorOperation(4, 3);
