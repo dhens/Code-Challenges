@@ -28,3 +28,19 @@
 
 //     1 <= nums.length <= 100
 //     1 <= nums[i] <= 100
+
+const goodPairs = (input) => {
+    let goodPairCount = 0;
+    for (let i = 0; i < input.length; i++) {
+        console.log(`i: ${i}`);
+        for (let j = i+1; j < input.length; j++) {
+            if(input[i] === input[j]) {
+                console.log(`if condition input[${i}]:${input[i]} === input[${j}]:${input[j]}`);
+                goodPairCount++;
+            }
+        }
+    }
+    console.log(`Done!\ngoodPairCount: ${goodPairCount}`);
+}
+
+goodPairs([1,1,1,1]);
