@@ -32,13 +32,8 @@
 const goodPairs = (input) => {
     let goodPairCount = 0;
     for (let i = 0; i < input.length; i++) {
-        console.log(`i: ${i}`);
         for (let j = i+1; j < input.length; j++) {
-            console.log(j)
-            if(input[i] === input[j]) {
-                console.log(`if condition input[${i}]:${input[i]} === input[${j}]:${input[j]}`);
-                goodPairCount++;
-            }
+            if(input[i] === input[j]) goodPairCount++;
         }
     }
     console.log(`Done!\ngoodPairCount: ${goodPairCount}`);
