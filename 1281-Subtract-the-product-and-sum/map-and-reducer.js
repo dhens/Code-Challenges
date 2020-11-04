@@ -18,11 +18,10 @@
 // Sum of digits = 4 + 4 + 2 + 1 = 11 
 // Result = 32 - 11 = 21
 
-var subtractProductAndSum = function(n) {
-    console.log(n)
-    for ( let i = 0; i < n.length; i++ ) {
-        console.log(i);
-    }
-};
-
-subtractProductAndSum(123);
+const subtractProductAndSum = function(n) {
+    const numArr = (n.split('').map((i) => { return Number(i); }));
+    const product = numArr.reduce((a,b) => a * b);
+    const sum = numArr.reduce((a,b) => a + b, 0);
+    console.log(product - sum)
+}
+subtractProductAndSum(234);
