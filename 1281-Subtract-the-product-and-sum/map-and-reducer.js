@@ -19,7 +19,7 @@
 // Result = 32 - 11 = 21
 
 const subtractProductAndSum = function(n) {
-    const numArr = (n.split('').map((i) => { return Number(i); }));
+    const numArr = (n + ''.split('').map((i) => { return Number(i); }));
     const product = numArr.reduce((a,b) => a * b);
     const sum = numArr.reduce((a,b) => a + b, 0);
     console.log(product - sum)
