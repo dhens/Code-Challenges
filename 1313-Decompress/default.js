@@ -23,19 +23,21 @@ const decompressRLElist = nums => {
     let pushVal = 0;
     const compressedArr = [];
     for (let i = 0; i < nums.length; i++) {
+        // every 2 loops, set the pushVal
+        // if we store it every time, we wouldnt be able to discern the freqVal from the pushVal
+        // as they would both be the same value
         if (i % 2 + 1 === 2) {
+            // check value of the array with the current index i value, store it in pushVal
             pushVal = nums[i];
             for (let j = 0; j < freqVal; j++) {
+                // once two indexes have been checked, push the pushVal into compressedArr freqVal amount of times
                 compressedArr.push(pushVal);
             }
         } else {
-            // check value of the array with the current index i value, store it in freqVal
             freqVal = nums[i];
-            // check value of the next item in array with current index, store it in pushVal
-            // once two indexes have been checked, push the pushVal into compressedArr freqVal amount of times
         }
     }
     console.log(compressedArr)
 };
 
-decompressRLElist([1, 2, 3, 4])
+decompressRLElist([1, 1, 9, 9])
