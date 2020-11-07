@@ -19,8 +19,9 @@
 // Output: [1,3,3]
 
 const decompressRLElist = nums => {
-    let freqVal = 0;
     let pushVal = 0;
+    let freqVal = 0;
+
     const compressedArr = [];
     for (let i = 0; i < nums.length; i++) {
         // every 2 loops, set the pushVal
@@ -34,6 +35,7 @@ const decompressRLElist = nums => {
                 compressedArr.push(pushVal);
             }
         } else {
+            // every 2nd number is the frequency that the previous number is pushed to the array
             freqVal = nums[i];
         }
     }
