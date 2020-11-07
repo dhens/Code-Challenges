@@ -4,7 +4,7 @@
 
 // Return the decompressed list.
 
- 
+
 // Example 1:
 
 // Input: nums = [1,2,3,4]
@@ -19,9 +19,23 @@
 // Output: [1,3,3]
 
 const decompressRLElist = nums => {
-    let arr = [1,2,3,4];
-    arr.push([5,6,7,8]);
-    console.log(arr);
+    let freqVal = 0;
+    let pushVal = 0;
+    const compressedArr = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (i % 2 + 1 === 2) {
+            pushVal = nums[i];
+            for (let j = 0; j < freqVal; j++) {
+                compressedArr.push(pushVal);
+            }
+        } else {
+            // check value of the array with the current index i value, store it in freqVal
+            freqVal = nums[i];
+            // check value of the next item in array with current index, store it in pushVal
+            // once two indexes have been checked, push the pushVal into compressedArr freqVal amount of times
+        }
+    }
+    console.log(compressedArr)
 };
 
-decompressRLElist()
+decompressRLElist([1, 2, 3, 4])
